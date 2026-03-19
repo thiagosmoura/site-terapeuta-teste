@@ -1,0 +1,215 @@
+/* --- CONFIGURAÇÕES GERAIS E CORES DO KIT DE MARCA --- */
+:root {
+  --cor-primaria: #4a90e2; /* Azul terapêutico - Troque pela cor do cliente */
+  --cor-secundaria: #2c3e50; /* Cor do texto escuro */
+  --cor-fundo: #f8f9fa; /* Fundo claro e limpo */
+  --cor-whatsapp: #25d366; /* Verde padrão do WhatsApp */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  color: var(--cor-secundaria);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.secao {
+  padding: 60px 0;
+}
+
+.fundo-cinza {
+  background-color: var(--cor-fundo);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--cor-primaria);
+}
+
+/* --- HERO SECTION (A Primeira coisa que o cliente vê) --- */
+.hero {
+  background-color: var(--cor-primaria);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* --- BOTÃO WHATSAPP --- */
+.btn-whatsapp {
+  display: inline-block;
+  background-color: var(--cor-whatsapp);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe57;
+}
+
+/* --- SEÇÃO SOBRE (Usando Flexbox para alinhar foto e texto) --- */
+.conteudo-sobre {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.foto-terapeuta img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- LISTA E CARDS --- */
+.lista-beneficios {
+  list-style-position: inside;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lista-beneficios li {
+  margin-bottom: 10px;
+}
+
+.cards-resultados {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  text-align: center;
+  border-top: 4px solid var(--cor-primaria);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: var(--cor-primaria);
+}
+
+/* --- RODAPÉ --- */
+footer {
+  background-color: var(--cor-secundaria);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* --- RESPONSIVIDADE (A mágica para funcionar bem no Celular) --- */
+@media (max-width: 768px) {
+  .conteudo-sobre {
+    flex-direction: column; /* Coloca a foto em cima e o texto embaixo */
+    text-align: center;
+  }
+
+  .cards-resultados {
+    flex-direction: column; /* Empilha os cards no celular */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+/* --- ANIMAÇÕES DE SCROLL --- */
+.oculto {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- FAQ (Dúvidas Frequentes) --- */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.pergunta {
+  background-color: white;
+  color: var(--cor-secundaria);
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pergunta:hover {
+  background-color: #f9f9f9;
+}
+
+/* Ícone de "+" */
+.pergunta::after {
+  content: "\002B";
+  font-size: 1.5rem;
+  color: var(--cor-primaria);
+  font-weight: bold;
+}
+
+/* Ícone de "-" quando aberto */
+.pergunta.ativa::after {
+  content: "\2212";
+}
+
+.resposta {
+  padding: 0 20px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  font-size: 1rem;
+}
+
+.resposta p {
+  padding: 15px 0;
+  color: #555;
+}
